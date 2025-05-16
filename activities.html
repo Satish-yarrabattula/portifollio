@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Activities - Satish Yarrabattula</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #121922;
+      color: #e0e6f0;
+      padding: 40px 30px;
+      border: 6px solid #0ea5e9;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Back button as smaller, glowing rectangular button */
+    .back-button {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      display: inline-flex;
+      align-items: center;
+      color: #0ea5e9;
+      background: transparent;
+      border: 2px solid #0ea5e9;
+      padding: 4px 10px;      /* smaller padding */
+      font-size: 0.8rem;      /* smaller font size */
+      border-radius: 8px;     /* less rounded */
+      text-decoration: none;
+      box-shadow: 0 0 6px #0ea5e9;  /* smaller glow */
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.4s ease;
+      user-select: none;
+      z-index: 1000;
+      cursor: pointer;
+    }
+    .back-button:hover {
+      background-color: #0ea5e9;
+      color: #0b0f14;
+      box-shadow: 0 0 12px #38bdf8; /* smaller glow on hover */
+    }
+    .back-button svg {
+      width: 14px;   /* smaller icon */
+      height: 14px;
+      margin-right: 6px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      color: #38bdf8;
+      text-shadow: 0 0 12px #0ea5e9;
+      letter-spacing: 2px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    @media(max-width: 720px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+    .card {
+      background: #192338;
+      border-radius: 15px;
+      padding: 25px 30px;
+      box-shadow: 0 6px 15px rgba(14, 165, 233, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 0.7s forwards;
+      cursor: default;
+      user-select: none;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.6);
+    }
+    .card h2 {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      color: #0ea5e9;
+      margin-bottom: 20px;
+      gap: 12px;
+      font-weight: 600;
+    }
+    .card h2 i {
+      color: #38bdf8;
+      font-size: 1.8rem;
+    }
+    ul {
+      list-style: none;
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      padding-left: 0;
+    }
+    ul li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 16px;
+      transition: color 0.25s ease;
+    }
+    ul li::before {
+      content: "\f058"; /* FontAwesome check-circle */
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 3px;
+      color: #0ea5e9;
+      font-size: 16px;
+      transition: color 0.25s ease;
+    }
+    ul li:hover {
+      color: #38bdf8;
+    }
+    ul li:hover::before {
+      color: #38bdf8;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="map.html" class="back-button" title="Back to Map" aria-label="Back to Map">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M15 18l-6-6 6-6" />
+    </svg>
+    Back to Map
+  </a>
+
+  <header>
+    <h1>Activities & Achievements</h1>
+  </header>
+
+  <div class="container">
+    <div class="card" style="animation-delay: 0.1s;">
+      <h2><i class="fa-solid fa-trophy"></i> Achievements</h2>
+      <ul>
+        <li>Participated in the VLSI workshop conducted by ’SSIT SOUTIONS’ in RGUKT Ongole.</li>
+        <li>Completed the VLSI internship at ’CODETECH IT SOLUTIONS PVT LTD’.</li>
+      </ul>
+    </div>
+    <div class="card" style="animation-delay: 0.3s;">
+      <h2><i class="fa-solid fa-basketball"></i> Extra-Curricular Activities</h2>
+      <ul>
+        <li>Winner in the Ongole Basketball League (OBL) conducted by RGUKT Ongole.</li>
+        <li>NCC ’A’ Certificate Holder.</li>
+        <li>Participated in Kriya State level Children’s Festival at JNTUK in 2019.</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>

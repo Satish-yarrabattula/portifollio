@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Satish Yarrabattula</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-+mjcAc0T4e1l+wR5L6bZ7k6MYf3Klm0M+3w3eEt4vW7Ck6wK0b2uIbZ+ZPzwR0Y8aH4B7wGKZ70p+zL+EnDxIA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0b0f14;
+      color: #f0f9ff;
+      padding: 20px;
+      border: 8px solid #0ea5e9;
+      min-height: 100vh;
+      transition: all 0.4s ease;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      display: inline-flex;
+      align-items: center;
+      color: #0ea5e9;
+      background: transparent;
+      border: 2px solid #0ea5e9;
+      padding: 5px 12px;
+      font-size: 0.85rem;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 0 6px #0ea5e9;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.4s ease, transform 0.3s ease;
+      user-select: none;
+      z-index: 1000;
+      cursor: pointer;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+    }
+    .back-button:hover {
+      background-color: #0ea5e9;
+      color: #0b0f14;
+      box-shadow: 0 0 14px #38bdf8, 0 0 24px #38bdf8;
+      transform: scale(1.1);
+    }
+    .back-button svg {
+      stroke: currentColor;
+      margin-right: 6px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #38bdf8;
+      text-shadow: 0 0 10px #0ea5e9;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .project-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .project-card {
+      background: #112130;
+      border-radius: 15px;
+      padding: 20px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    .project-card:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .project-card:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+    }
+
+    .project-title {
+      font-size: 1.3rem;
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    .project-description {
+      font-size: 1rem;
+      color: #cbd5e1;
+    }
+
+    .project-image {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 15px;
+      box-shadow: 0 0 10px #0ea5e9;
+      transition: transform 0.4s ease;
+    }
+
+    .project-image:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="map.html" class="back-button" title="Back to Map" aria-label="Back to Map">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="16" height="16" stroke="#0ea5e9" stroke-width="2" fill="none">
+      <path d="M15 18l-6-6 6-6" />
+    </svg>
+    Back to Map
+  </a>
+
+  <header>
+    <h1>My Projects</h1>
+  </header>
+
+  <div class="project-container">
+    <div class="project-card">
+      <div class="project-title">Automatic Water Sprinkler Robot</div>
+      <div class="project-description">
+        Developed using Arduino UNO and sensors to automate plant watering. It avoids obstacles and serves as a labor-efficient solution for agricultural companies.
+      </div>
+      <img src="sprinkler_robot.jpg" alt="Sprinkler Robot" class="project-image" />
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">Text Compression using Huffman Coding</div>
+      <div class="project-description">
+        A MATLAB-based tool to compress text files losslessly using Huffman encoding. It preserves data integrity and reduces transmission size significantly.
+      </div>
+      <img src="huffman_compression.jpg" alt="Huffman Coding" class="project-image" />
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background: #0b0f14;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #e2e8f0;
+      overflow: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      color: #38bdf8;
+      text-shadow: 0 0 10px #38bdf8;
+      user-select: none;
+    }
+
+    .back-home-button {
+      position: absolute;
+      top: 12px;
+      left: 16px;
+      text-decoration: none;
+      color: #38bdf8;
+      font-size: 14px;
+      font-weight: 600;
+      background: rgba(11, 15, 20, 0.85);
+      border: 1.5px solid #38bdf8;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 6px #38bdf8;
+      z-index: 10000;
+    }
+
+    .back-home-button:hover {
+      background: #38bdf8;
+      color: #0b0f14;
+      box-shadow: 0 0 12px #7dd3fc;
+      border-color: #7dd3fc;
+      transform: scale(1.05);
+    }
+
+    svg {
+      display: block;
+      width: 100vw;
+      height: calc(100vh - 70px);
+      background: #0b0f14;
+    }
+
+    .building {
+      fill: #081e2f;
+      stroke: #38bdf8;
+      stroke-width: 3;
+      cursor: pointer;
+      transition: fill 0.3s ease, stroke 0.3s ease;
+      filter: drop-shadow(0 0 6px #38bdf8);
+    }
+
+    .building:hover {
+      fill: #38bdf8;
+      stroke: #7dd3fc;
+      filter: drop-shadow(0 0 20px #7dd3fc);
+    }
+
+    .building-glow {
+      stroke-dasharray: 620;
+      stroke-dashoffset: 620;
+      animation: glowBorder 3s linear infinite;
+    }
+
+    @keyframes glowBorder {
+      0% {
+        stroke-dashoffset: 620;
+        stroke: #38bdf8;
+        filter: drop-shadow(0 0 6px #38bdf8);
+      }
+      50% {
+        stroke-dashoffset: 0;
+        stroke: #7dd3fc;
+        filter: drop-shadow(0 0 15px #7dd3fc);
+      }
+      100% {
+        stroke-dashoffset: 620;
+        stroke: #38bdf8;
+        filter: drop-shadow(0 0 6px #38bdf8);
+      }
+    }
+
+    text {
+      fill: #e2e8f0;
+      font-weight: 600;
+      pointer-events: none;
+      user-select: none;
+      font-size: 18px;
+      transition: fill 0.3s ease, font-size 0.3s ease;
+    }
+
+    a:hover text {
+      fill: #ffffff;
+      font-size: 20px;
+    }
+
+    line.path {
+      stroke: #38bdf8;
+      stroke-width: 3;
+      stroke-dasharray: 6 6;
+    }
+
+    .icon {
+      pointer-events: none;
+      transition: fill 0.3s ease;
+    }
+
+    .page-border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      border-radius: 20px;
+      border: 6px solid;
+      border-image: linear-gradient(135deg, #38bdf8, #7dd3fc, #38bdf8) 1;
+      animation: border-pulse 6s ease-in-out infinite, border-glow 3s linear infinite;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    @keyframes border-glow {
+      0% {
+        filter: drop-shadow(0 0 4px #38bdf8);
+      }
+      50% {
+        filter: drop-shadow(0 0 16px #7dd3fc);
+      }
+      100% {
+        filter: drop-shadow(0 0 4px #38bdf8);
+      }
+    }
+
+    @keyframes border-pulse {
+      0%, 100% {
+        border-width: 6px;
+      }
+      50% {
+        border-width: 8px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      svg {
+        transform: scale(0.9);
+        transform-origin: center;
+      }
+      text {
+        font-size: 14px;
+      }
+
+      .back-home-button {
+        font-size: 12px;
+        padding: 5px 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-border"></div>
+  <a href="index.html" class="back-home-button">← Home</a>
+  <h1>A mission of creating innovative VLSI solutions</h1>
+  <svg viewBox="0 0 1400 900" aria-label="VLSI Portfolio Village Map" role="img" preserveAspectRatio="xMidYMid meet">
+    <!-- Paths -->
+    <line class="path" x1="200" y1="150" x2="600" y2="150" />
+    <line class="path" x1="600" y1="150" x2="600" y2="450" />
+    <line class="path" x1="600" y1="450" x2="1000" y2="450" />
+    <line class="path" x1="200" y1="150" x2="200" y2="450" />
+    <line class="path" x1="200" y1="450" x2="600" y2="450" />
+    <line class="path" x1="1000" y1="450" x2="1000" y2="750" />
+
+    <!-- Resume -->
+    <a href="resume.html">
+      <title>Go to Resume</title>
+      <rect class="building building-glow" x="150" y="100" width="150" height="150" rx="20" ry="20" />
+      <path class="icon" d="M185 140 h80 v20 h-80 z M185 180 h80 v10 h-80 z" style="fill:#38bdf8" />
+      <text x="225" y="235" text-anchor="middle">Resume</text>
+    </a>
+
+    <!-- Projects -->
+    <a href="projects.html">
+      <title>Explore Projects</title>
+      <rect class="building building-glow" x="550" y="100" width="150" height="150" rx="20" ry="20" />
+      <rect class="icon" x="590" y="140" width="70" height="50" rx="8" ry="8" style="fill:#7dd3fc" />
+      <line class="icon" x1="590" y1="165" x2="660" y2="165" stroke="#7dd3fc" stroke-width="3" />
+      <line class="icon" x1="625" y1="140" x2="625" y2="190" stroke="#7dd3fc" stroke-width="3" />
+      <text x="625" y="235" text-anchor="middle">Projects</text>
+    </a>
+
+    <!-- Education -->
+    <a href="education.html">
+      <title>View Education</title>
+      <rect class="building building-glow" x="150" y="400" width="150" height="150" rx="20" ry="20" />
+      <path class="icon" d="M190,460 l60,-25 l60,25 l-60,25z" style="fill:#c4b5fd" />
+      <rect class="icon" x="210" y="460" width="30" height="20" style="fill:#c4b5fd" />
+      <text x="225" y="535" text-anchor="middle">Education</text>
+    </a>
+
+    <!-- Skills -->
+    <a href="skills.html">
+      <title>Check Skills</title>
+      <rect class="building building-glow" x="550" y="400" width="150" height="150" rx="20" ry="20" />
+      <g style="fill:#4ade80">
+        <circle class="icon" cx="625" cy="470" r="18" />
+        <line class="icon" x1="625" y1="452" x2="625" y2="488" stroke="#0b0f14" stroke-width="3" />
+        <line class="icon" x1="607" y1="470" x2="643" y2="470" stroke="#0b0f14" stroke-width="3" />
+      </g>
+      <text x="625" y="535" text-anchor="middle">Skills</text>
+    </a>
+
+    <!-- Activities -->
+    <a href="activities.html">
+      <title>See Activities</title>
+      <rect class="building building-glow" x="950" y="400" width="150" height="150" rx="20" ry="20" />
+      <polygon class="icon" points="980,460 1025,475 1070,460 1050,500 1000,500" style="fill:#facc15" />
+      <text x="1025" y="535" text-anchor="middle">Activities</text>
+    </a>
+
+    <!-- Links -->
+    <a href="links.html">
+      <title>Important Links</title>
+      <rect class="building building-glow" x="950" y="650" width="150" height="150" rx="20" ry="20" />
+      <path class="icon" d="M980 690 h40 a10 10 0 0 1 10 10 v20 a10 10 0 0 1 -10 10 h-40 a10 10 0 0 1 -10 -10 v-20 a10 10 0 0 1 10 -10 z" style="fill:#f472b6" />
+      <text x="1025" y="755" text-anchor="middle">Links</text>
+    </a>
+  </svg>
+</body>
+</html>

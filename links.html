@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Satish Yarrabattula - Links & Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0b0f14;
+      color: #f1f5f9;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      border: 6px solid #0ea5e9;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Back to Map button */
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      display: inline-flex;
+      align-items: center;
+      color: #0ea5e9;
+      background: transparent;
+      border: 2px solid #0ea5e9;
+      padding: 5px 12px;
+      font-size: 0.85rem;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 0 6px #0ea5e9;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.4s ease, transform 0.3s ease;
+      user-select: none;
+      z-index: 1000;
+      cursor: pointer;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+    }
+    .back-button:hover {
+      background-color: #0ea5e9;
+      color: #0b0f14;
+      box-shadow: 0 0 14px #38bdf8, 0 0 24px #38bdf8;
+      transform: scale(1.1);
+    }
+    .back-button svg {
+      stroke: currentColor;
+      margin-right: 6px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #38bdf8;
+      text-shadow: 0 0 8px #0ea5e9;
+    }
+
+    p.intro {
+      text-align: center;
+      color: #cbd5e1;
+      margin-bottom: 40px;
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    ul.links-list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 40px;
+    }
+
+    ul.links-list li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+      transition: transform 0.2s ease;
+    }
+
+    ul.links-list li:hover {
+      transform: scale(1.03);
+    }
+
+    ul.links-list i {
+      font-size: 1.8rem;
+      color: #0ea5e9;
+      margin-right: 16px;
+      min-width: 30px;
+      text-align: center;
+    }
+
+    ul.links-list a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    ul.links-list a:hover,
+    ul.links-list a:focus {
+      color: #0ea5e9;
+    }
+
+    .contact-info {
+      border-top: 1px solid #1e293b;
+      padding-top: 30px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      color: #94a3b8;
+    }
+
+    .contact-item i {
+      font-size: 1.5rem;
+      margin-right: 16px;
+      color: #0ea5e9;
+      min-width: 30px;
+    }
+
+    .contact-item span {
+      font-weight: 600;
+      color: #38bdf8;
+      margin-right: 6px;
+    }
+
+    .contact-item a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-item a:hover,
+    .contact-item a:focus {
+      color: #38bdf8;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      ul.links-list a {
+        font-size: 1rem;
+      }
+
+      .contact-item {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="map.html" class="back-button" title="Back to Map" aria-label="Back to Map">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="16" height="16" stroke="#0ea5e9" stroke-width="2" fill="none">
+      <path d="M15 18l-6-6 6-6" />
+    </svg>
+    Back to Map
+  </a>
+
+  <h1>Connect with Me</h1>
+  <p class="intro">
+    Explore my professional presence online and feel free to reach out via the platforms listed below.
+  </p>
+
+  <ul class="links-list" aria-label="Social Links">
+    <li>
+      <i class="fab fa-linkedin" aria-hidden="true"></i>
+      <a href="https://www.linkedin.com/in/satish-yarrabattula-87800a333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn Profile</a>
+    </li>
+    <li>
+      <i class="fab fa-github" aria-hidden="true"></i>
+      <a href="https://github.com/satishyarrabattula" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub Profile</a>
+    </li>
+  </ul>
+
+  <div class="contact-info" aria-label="Contact Information">
+    <div class="contact-item">
+      <i class="fas fa-phone" aria-hidden="true"></i>
+      <span>Phone:</span>
+      <a href="tel:+919700373239" aria-label="Phone Number">+91 97003 73239</a>
+    </div>
+    <div class="contact-item">
+      <i class="fas fa-envelope" aria-hidden="true"></i>
+      <span>Email:</span>
+      <a href="mailto:satishyarrabattula@gmail.com" aria-label="Email Address">satishyarrabattula@gmail.com</a>
+    </div>
+  </div>
+
+</body>
+</html>
