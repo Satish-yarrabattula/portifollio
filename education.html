@@ -33,6 +33,7 @@
       cursor: pointer;
       text-decoration: none;
       transition: all 0.3s ease;
+      z-index: 10;
     }
 
     .back-button:hover {
@@ -137,26 +138,34 @@
       font-weight: bold;
     }
 
+    /* Mobile View Fixes */
     @media screen and (max-width: 768px) {
+      .timeline::after {
+        left: 20px;
+        transform: none;
+      }
+
       .entry {
         width: 100%;
         left: 0 !important;
         text-align: left;
         padding-left: 40px;
-      }
-
-      .timeline::after {
-        left: 20px;
+        padding-right: 10px;
+        margin-bottom: 30px;
       }
 
       .entry::before {
         left: 10px !important;
-        right: auto;
+        right: auto !important;
       }
 
       .back-button {
         font-size: 13px;
         padding: 5px 10px;
+      }
+
+      .card {
+        margin-left: 0;
       }
     }
   </style>
