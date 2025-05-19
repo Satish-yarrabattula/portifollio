@@ -26,35 +26,28 @@
 
     .back-button {
       position: fixed;
-      top: 20px;
-      left: 20px;
-      display: inline-flex;
-      align-items: center;
+      top: 15px;
+      left: 15px;
+      display: inline-block;
       color: #0ea5e9;
       background: transparent;
       border: 2px solid #0ea5e9;
-      padding: 5px 12px;
-      font-size: 0.85rem;
-      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 0.9rem;
+      border-radius: 20px;
       text-decoration: none;
-      box-shadow: 0 0 6px #0ea5e9;
-      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.4s ease, transform 0.3s ease;
+      box-shadow: 0 0 8px #0ea5e9;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.4s ease;
       user-select: none;
       z-index: 1000;
-      cursor: pointer;
-      font-weight: 600;
-      font-family: 'Poppins', sans-serif;
     }
     .back-button:hover {
       background-color: #0ea5e9;
       color: #0b0f14;
       box-shadow: 0 0 14px #38bdf8, 0 0 24px #38bdf8;
-      transform: scale(1.1);
+      
     }
-    .back-button svg {
-      stroke: currentColor;
-      margin-right: 6px;
-    }
+    
 
     header {
       text-align: center;
@@ -134,12 +127,9 @@
 </head>
 <body>
 
-  <a href="map.html" class="back-button" title="Back to Map" aria-label="Back to Map">
-    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="16" height="16" stroke="#0ea5e9" stroke-width="2" fill="none">
-      <path d="M15 18l-6-6 6-6" />
-    </svg>
-    Back to Map
-  </a>
+  <a href="map.html" class="back-button" aria-label="Back to Map">
+  ← Back to Map
+</a>
 
   <header>
     <h1>My Projects</h1>
