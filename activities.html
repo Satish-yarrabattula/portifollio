@@ -8,19 +8,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
     body {
       font-family: 'Poppins', sans-serif;
       background: #121922;
       color: #e0e6f0;
-      padding: 40px 30px;
+      padding: 40px 20px;
       border: 6px solid #0ea5e9;
       min-height: 100vh;
       overflow-x: hidden;
     }
 
-    /* Back button as smaller, glowing rectangular button */
     .back-button {
       position: fixed;
       top: 15px;
@@ -30,11 +31,11 @@
       color: #0ea5e9;
       background: transparent;
       border: 2px solid #0ea5e9;
-      padding: 4px 10px;      /* smaller padding */
-      font-size: 0.8rem;      /* smaller font size */
-      border-radius: 8px;     /* less rounded */
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      border-radius: 8px;
       text-decoration: none;
-      box-shadow: 0 0 6px #0ea5e9;  /* smaller glow */
+      box-shadow: 0 0 6px #0ea5e9;
       transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.4s ease;
       user-select: none;
       z-index: 1000;
@@ -43,10 +44,10 @@
     .back-button:hover {
       background-color: #0ea5e9;
       color: #0b0f14;
-      box-shadow: 0 0 12px #38bdf8; /* smaller glow on hover */
+      box-shadow: 0 0 12px #38bdf8;
     }
     .back-button svg {
-      width: 14px;   /* smaller icon */
+      width: 14px;
       height: 14px;
       margin-right: 6px;
       stroke: currentColor;
@@ -56,37 +57,62 @@
 
     header {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
     header h1 {
       font-weight: 700;
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: #38bdf8;
       text-shadow: 0 0 12px #0ea5e9;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
+      word-wrap: break-word;
     }
+
     .container {
       max-width: 900px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 30px;
+      padding-bottom: 40px;
+      word-wrap: break-word;
     }
-    @media(max-width: 720px) {
+
+    @media (max-width: 720px) {
       .container {
         grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .card h2 {
+        font-size: 1.5rem;
+      }
+
+      ul {
+        font-size: 1rem;
+      }
+
+      .back-button {
+        font-size: 0.75rem;
+        padding: 3px 8px;
+      }
+
+      body {
+        padding: 30px 15px;
       }
     }
+
     .card {
       background: #192338;
       border-radius: 15px;
-      padding: 25px 30px;
+      padding: 20px 22px;
       box-shadow: 0 6px 15px rgba(14, 165, 233, 0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       opacity: 0;
       animation: fadeInUp 0.7s forwards;
       cursor: default;
       user-select: none;
+      word-wrap: break-word;
     }
     .card:hover {
       transform: translateY(-8px);
@@ -97,9 +123,10 @@
       align-items: center;
       font-size: 1.8rem;
       color: #0ea5e9;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       gap: 12px;
       font-weight: 600;
+      flex-wrap: wrap;
     }
     .card h2 i {
       color: #38bdf8;
@@ -117,9 +144,10 @@
       padding-left: 30px;
       margin-bottom: 16px;
       transition: color 0.25s ease;
+      word-wrap: break-word;
     }
     ul li::before {
-      content: "\f058"; /* FontAwesome check-circle */
+      content: "\f058";
       font-family: "Font Awesome 6 Free";
       font-weight: 900;
       position: absolute;
@@ -135,6 +163,7 @@
     ul li:hover::before {
       color: #38bdf8;
     }
+
     @keyframes fadeInUp {
       from {
         opacity: 0;
