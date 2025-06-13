@@ -162,7 +162,7 @@
   <iframe class="resume-viewer" id="resumeFrame" src="Resume-1.pdf" title="Resume Preview"></iframe>
 
   <!-- Download Button -->
-  <a href="Resume-1.pdf" download class="download-link" id="downloadBtn" aria-label="Download Satish Yarrabattula Resume">
+  <a href="Resume-1.pdf" target="_blank" rel="noopener noreferrer" class="download-link" id="downloadBtn">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path d="M5 20h14v-2H5v2zm7-18L5.33 9h3.67v6h4V9h3.67L12 2z"/>
     </svg>
@@ -170,19 +170,27 @@
   </a>
 
   <script>
+    function isMobileDevice() {
+      return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
     function toggleResume() {
       const resumeFrame = document.getElementById("resumeFrame");
       const downloadBtn = document.getElementById("downloadBtn");
       const resumeBtn = document.getElementById("resumeBtn");
 
-      if (resumeFrame.style.display === "block") {
-        resumeFrame.style.display = "none";
-        downloadBtn.style.display = "none";
-        resumeBtn.textContent = "View Resume";
+      if (isMobileDevice()) {
+        window.open("Resume-1.pdf", "_blank");
       } else {
-        resumeFrame.style.display = "block";
-        downloadBtn.style.display = "inline-flex";
-        resumeBtn.textContent = "Close Resume";
+        if (resumeFrame.style.display === "block") {
+          resumeFrame.style.display = "none";
+          downloadBtn.style.display = "none";
+          resumeBtn.textContent = "View Resume";
+        } else {
+          resumeFrame.style.display = "block";
+          downloadBtn.style.display = "inline-flex";
+          resumeBtn.textContent = "Close Resume";
+        }
       }
     }
   </script>
