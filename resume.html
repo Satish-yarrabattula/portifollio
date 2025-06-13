@@ -158,27 +158,21 @@
 
   <iframe class="resume-viewer" id="resumeFrame" src="Resume-1.pdf" title="Resume Preview"></iframe>
 
-  <a href="Resume-1.pdf" target="_blank" class="download-link" id="downloadBtn">
+  <a href="Resume-1.pdf" download class="download-link" id="downloadBtn">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm7-18L5.33 9h3.67v6h4V9h3.67L12 2z"/></svg>
     Download Resume
   </a>
 
   <script>
-    const isMobile = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
     function toggleResume() {
       const frame = document.getElementById("resumeFrame");
       const download = document.getElementById("downloadBtn");
       const btn = document.getElementById("resumeBtn");
 
-      if (isMobile()) {
-        window.open("Resume-1.pdf", "_blank");
-      } else {
-        const isVisible = frame.style.display === "block";
-        frame.style.display = isVisible ? "none" : "block";
-        download.style.display = isVisible ? "none" : "inline-flex";
-        btn.textContent = isVisible ? "View Resume" : "Close Resume";
-      }
+      const isVisible = frame.style.display === "block";
+      frame.style.display = isVisible ? "none" : "block";
+      download.style.display = isVisible ? "none" : "inline-flex";
+      btn.textContent = isVisible ? "View Resume" : "Close Resume";
     }
   </script>
 
