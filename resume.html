@@ -60,6 +60,38 @@
       animation-delay: 0.3s;
     }
 
+    .button {
+      background: #0ea5e9;
+      color: #0b0f14;
+      font-weight: 600;
+      padding: 16px 36px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      box-shadow: 0 0 20px #0ea5e9;
+      transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      margin-bottom: 30px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .button:hover {
+      background: #38bdf8;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #38bdf8, 0 0 10px #0ea5e9 inset;
+    }
+
+    .resume-viewer {
+      width: 100%;
+      max-width: 850px;
+      height: 600px;
+      border: none;
+      display: none;
+      margin-bottom: 30px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
     .download-link {
       background: #0ea5e9;
       color: #0b0f14;
@@ -71,11 +103,8 @@
       box-shadow: 0 0 20px #0ea5e9;
       transition: background 0.4s ease, transform 0.3s ease;
       user-select: none;
+      display: none;
       animation: fadeInUp 1s ease forwards;
-      animation-delay: 0.5s;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
     }
 
     .download-link:hover {
@@ -101,9 +130,13 @@
     }
 
     @media screen and (max-width: 600px) {
-      .back-button {
-        font-size: 13px;
-        padding: 5px 10px;
+      .button {
+        font-size: 1rem;
+        padding: 12px 24px;
+      }
+
+      .resume-viewer {
+        height: 400px;
       }
 
       .download-link {
@@ -122,12 +155,37 @@
     As an aspiring Electronics and Communication Engineering student with a passion for VLSI design, I am continuously developing my skills through academics, projects, and hands-on experiences. This resume highlights my educational journey, technical skills, and projects that reflect my dedication and eagerness to contribute to the semiconductor industry.
   </p>
 
-  <a href="Resume-1.pdf" download class="download-link" aria-label="Download Satish Yarrabattula Resume">
+  <!-- Toggle Resume Button -->
+  <button class="button" onclick="toggleResume()" id="resumeBtn">View Resume</button>
+
+  <!-- Resume Viewer -->
+  <iframe class="resume-viewer" id="resumeFrame" src="Resume-1.pdf" title="Resume Preview"></iframe>
+
+  <!-- Download Button -->
+  <a href="Resume-1.pdf" download class="download-link" id="downloadBtn" aria-label="Download Satish Yarrabattula Resume">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path d="M5 20h14v-2H5v2zm7-18L5.33 9h3.67v6h4V9h3.67L12 2z"/>
     </svg>
     Download Resume
   </a>
+
+  <script>
+    function toggleResume() {
+      const resumeFrame = document.getElementById("resumeFrame");
+      const downloadBtn = document.getElementById("downloadBtn");
+      const resumeBtn = document.getElementById("resumeBtn");
+
+      if (resumeFrame.style.display === "block") {
+        resumeFrame.style.display = "none";
+        downloadBtn.style.display = "none";
+        resumeBtn.textContent = "View Resume";
+      } else {
+        resumeFrame.style.display = "block";
+        downloadBtn.style.display = "inline-flex";
+        resumeBtn.textContent = "Close Resume";
+      }
+    }
+  </script>
 
 </body>
 </html>
